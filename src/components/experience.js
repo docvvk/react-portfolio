@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Cell } from 'react-mdl';
 
-class Education extends Component {
+class Experience extends Component {
     render() { 
         return ( 
             <Grid>
@@ -10,12 +10,12 @@ class Education extends Component {
                 </Cell>
 
                 <Cell col={8}>
-                    <h4>{this.props.degree}</h4>
-                    <h5>{this.props.schoolName}</h5>
+                    <h4>{this.props.jobName}</h4>
+                    <h5>{this.props.jobDescription}</h5>
                 </Cell>
             </Grid>
          );
     }
 }
  
-export default Education;
+export default Experience;
