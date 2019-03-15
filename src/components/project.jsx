@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 
-import { Modal, ButtonToolbar } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 
 import {
   Card,
+  Grid,
+  Cell,
   CardTitle,
-  CardText,
   Button,
   CardMenu,
+  CardActions,
   Icon,
   IconButton,
   Tooltip
@@ -15,23 +17,39 @@ import {
 
 class App extends Component {
   render() {
-    const { modaltitle, modaltext, modalheader } = this.props;
+    const { modaltitle, modaltext, teckList = [] } = this.props;
+
     return (
       <Modal
         {...this.props}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
+        show
+        style={{ background: "rgb(0,0,0,0.6)" }}
       >
-        <Modal.Header closeButton>
+        <Modal.Header
+          style={{ backgroundColor: "#0F2027", color: "white" }}
+          closeButton
+        >
           <Modal.Title id="contained-modal-title-vcenter">
             {modaltitle}
           </Modal.Title>
         </Modal.Header>
-        <CardText>
-          <h4>{modalheader}</h4>
-          <p>{modaltext}</p>
-        </CardText>
+        <Grid>
+          <Cell col={6}>
+            <h3>Project Information</h3>
+            <p>{modaltext}</p>
+          </Cell>
+          <Cell col={6}>
+            <h3>Technologies</h3>
+            <ol>
+              {teckList.map(t => (
+                <li key={t}>{t}</li>
+              ))}
+            </ol>
+          </Cell>
+        </Grid>
         <Modal.Footer>
           <Button onClick={this.props.onHide}>Close</Button>
         </Modal.Footer>
@@ -48,73 +66,91 @@ class Project extends Component {
   }
 
   render() {
-    const { modaltitle, modaltext, modalheader } = this.props;
+    const {
+      modaltitle,
+      modaltext,
+      modalheader,
+      cardBackgroundURL,
+      githubURL,
+      demoURL
+    } = this.props;
 
     let modalClose = () => this.setState({ modalShow: false });
 
     return (
-      <ButtonToolbar>
-        <Card shadow={5} style={{ minWidth: "450", margin: "auto" }}>
-          <CardTitle
-            style={{
-              textAlign: "center",
-              fontFamily: "Anton",
-              // color: "#fff",
-              height: "176px",
-              background:
-                "url('https://uploads-ssl.webflow.com/5b6e27a9e5c31c6082c7e58e/5b7741cf4ce7f4467750181f_SoccerTrivia.png') center / cover"
-            }}
-            onClick={() => this.setState({ modalShow: true })}
-          >
-            <h4 className="project-heading">{modaltitle}</h4>
-            <a
-              href="https://github.com/docvvk/react-mindgame"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Tooltip label="Review my code!" position="left" large>
-                <i
-                  style={{
-                    fontSize: "2em",
-                    color: "white",
-                    position: "relative",
-                    top: "2.2em",
-                    left: "4.6em"
-                  }}
-                  className="fa fa-github"
-                  aria-hidden="true"
-                />
-              </Tooltip>
-            </a>
-            <a
-              href="https://thawing-shore-30878.herokuapp.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Tooltip label="Live Demo!" position="right" large>
-                <Icon
-                  name="info"
-                  style={{
-                    fontSize: "2em",
-                    color: "white",
-                    position: "relative",
-                    top: "2.2em",
-                    right: "5.3em"
-                  }}
-                />
-                {/* <i style={{fontSize:'2em', color:'white', position: "relative", top: "2.2em", right: '5.3em'}} className="fa fa-flash" aria-hidden="true" /> */}
+      <Card
+        shadow={5}
+        style={{
+          width: "528px",
+          height: "528px",
+          background: `url(${cardBackgroundURL}) center / cover`,
+          margin: "auto"
+        }}
+      >
+        <CardTitle expand />
+        <CardActions
+          style={{
+            height: "52px",
+            padding: "16px",
+            background: "rgba(0,0,0,0.2)",
+            fontFamily: "Anton",
+            textAlign: "center"
+          }}
+        >
+          <a href={githubURL} target="_blank" rel="noopener noreferrer">
+            <Tooltip label="Review my code!" position="top" large>
+              <i
+                style={{
+                  fontSize: "2em",
+                  color: "white",
+                  position: "relative",
+                  bottom: ".9em",
+                  right: "3em"
+                }}
+                className="fa fa-github"
+                aria-hidden="true"
+              />
+            </Tooltip>
+          </a>
 
-                {/* <Icon name="print" /> */}
-              </Tooltip>
+          <Tooltip label="Click for more Info!" position="top" large>
+            <h4
+              style={{
+                color: "#fff",
+                fontSize: "24px",
+                textAlign: "center",
+                cursor: "pointer",
+                position: "relative",
+                bottom: "1.2em",
+                textTransform: "uppercase",
+                fontFamily: "Anton"
+              }}
+              onClick={() => this.setState({ modalShow: true })}
+            >
+              {modaltitle}
+            </h4>
+          </Tooltip>
 
+          <a href={demoURL} target="_blank" rel="noopener noreferrer">
+            <Tooltip label="Live Demo!" position="top" large>
+              <Icon
+                name="info"
+                style={{
+                  fontSize: "2em",
+                  color: "white",
+                  position: "relative",
+                  bottom: ".7em",
+                  left: "3em"
+                }}
+              />
               {/* <i style={{fontSize:'2em', color:'white', position: "relative", top: "2.2em", right: '5.3em'}} className="fa fa-flash" aria-hidden="true" /> */}
-            </a>
-          </CardTitle>
+            </Tooltip>
+          </a>
+        </CardActions>
 
-          <CardMenu style={{ color: "#fff" }}>
-            <IconButton name="share" />
-          </CardMenu>
-        </Card>
+        <CardMenu style={{ color: "#fff" }}>
+          <IconButton name="share" />
+        </CardMenu>
 
         <App
           show={this.state.modalShow}
@@ -123,7 +159,7 @@ class Project extends Component {
           modaltext={modaltext}
           modalheader={modalheader}
         />
-      </ButtonToolbar>
+      </Card>
     );
   }
 }
