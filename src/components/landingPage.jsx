@@ -4,25 +4,25 @@ import { Grid, Cell } from "react-mdl";
 class LandingPage extends Component {
   render() {
     return (
-      <div style={{ width: "100%", margin: "auto" }}>
+      <div style={{ width: "100%", height: "100%", margin: "auto", overflow: "auto"}}>
         <Grid className="landing-grid">
           <Cell col={12}>
             <img
               src="https://previews.dropbox.com/p/thumb/AAXPFIPHwXkvr9-6-3VGKQ9na0cC-95lUHjh1Ns1MhCCNvcWs78zXbeehGIQ-rLTT_1m0Xq4lza8YJXf0AxoKxNCvRD-NSz7upu5eeg1-XLnlDKpAU0l8RQRrtBnj2dZDwPX_DnI3gl1Cb61KfovjNqqqyLKwliDMA5Pw735-w8y-Ivr5KJUG66qQoRoq3eLwxOc7YoebndvT6OhGlJh_Ctd21NHQvPZEmYdKRHbaPzI1XDd3QvJcfZivVvMlngX_BC9-IXtLOtXcKPpV4fQbF2rANPWeWf5A0_3nfEZe4yJVkULJqLrvW4_V4HP8mcLp7Q/p.jpeg?size_mode=5"
               alt="My Avatar"
-              className="avatar-img"
+              className="avatar-img jello-horizontal"
             />
 
             <div className="banner-text">
-              <h1>FULL STACK WEB DEVELOPER</h1>
+              <h1 className='text-flicker-in-glow'>FULL STACK WEB DEVELOPER</h1>
 
               <hr />
-              <p>
+              <p className='tracking-in-expand'>
                 HTML/CSS | Bootstrap | JavaScript | React | Redux | NodeJS |
-                Express | MongoDB{" "}
+                Express | MongoDB
               </p>
 
-              <div className="social-links">
+              <div className="social-links fade-in">
                 {/* LinkedIn */}
                 <a
                   href="https://google.com"

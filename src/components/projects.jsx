@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import JSProjects from './jsProjects';
 import {
   Tabs,
   Tab,
@@ -27,24 +28,32 @@ class Projects extends Component {
           <Card shadow={5} style={{ minWidth: "450", margin: "auto" }}>
             <CardTitle
               style={{
+                fontFamily: 'Anton',
                 color: "#fff",
                 height: "176px",
                 background:
-                  "url(https://cdn-images-1.medium.com/max/2600/1*Dr33-2Wgz8lYZxZsJUFIog.jpeg) center / cover"
+                  "url(https://steamcdn-a.akamaihd.net/steam/apps/448560/header.jpg?t=1531926512) center / cover"
               }}
             >
-              React Project #1
+              React Mindgame
             </CardTitle>
-            <CardText>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi ut
-              deserunt tempore quibusdam! Numquam nam perspiciatis id laudantium
-              quos consequuntur obcaecati impedit quibusdam qui, ducimus
-              dignissimos? Magni, adipisci. Blanditiis, ipsa?
-            </CardText>
+            <CardText>Single page React Web Game</CardText>
             <CardActions border>
-              <Button colored>Github</Button>
-              <Button colored>Code</Button>
-              <Button colored>LiveDemo</Button>
+              <a
+                href="https://github.com/docvvk/react-mindgame"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button colored>Github</Button>
+              </a>
+              {/* <Button colored>Code</Button> */}
+              <a
+                href="https://thawing-shore-30878.herokuapp.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button colored>LiveDemo</Button>
+              </a>
             </CardActions>
             <CardMenu style={{ color: "#fff" }}>
               <IconButton name="share" />
@@ -58,21 +67,31 @@ class Projects extends Component {
                 color: "#fff",
                 height: "176px",
                 background:
-                  "url(https://cdn-images-1.medium.com/max/2600/1*Dr33-2Wgz8lYZxZsJUFIog.jpeg) center / cover"
+                  "url(https://media.istockphoto.com/photos/search-button-on-virtual-screen-pressed-with-finger-picture-id492960182?k=6&m=492960182&s=612x612&w=0&h=ctN3RjwibhZEu2oV94SQF78TgLX0N9w12sabP4pizls=) center / cover"
               }}
             >
-              React Project #2
+              React Image Finder
             </CardTitle>
             <CardText>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi ut
-              deserunt tempore quibusdam! Numquam nam perspiciatis id laudantium
-              quos consequuntur obcaecati impedit quibusdam qui, ducimus
-              dignissimos? Magni, adipisci. Blanditiis, ipsa?
+              <p>Image finder web app created using Material UI and Create-React-App</p>
+               Search
+              images of your choice
             </CardText>
             <CardActions border>
-              <Button colored>Github</Button>
-              <Button colored>Code</Button>
-              <Button colored>LiveDemo</Button>
+              <a
+                href="https://github.com/docvvk/react-image-finder"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button colored>Github</Button>
+              </a>
+              <a
+                href="https://docvvk.github.io/react-image-finder/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button colored>LiveDemo</Button>
+              </a>
             </CardActions>
             <CardMenu style={{ color: "#fff" }}>
               <IconButton name="share" />
@@ -117,7 +136,7 @@ class Projects extends Component {
     } else if (this.state.activeTab === 2) {
       return (
         <div>
-          <h1>This is Javascript</h1>
+          <JSProjects />
         </div>
       );
     } else if (this.state.activeTab === 3) {
