@@ -12,12 +12,13 @@ import {
   CardActions,
   Icon,
   IconButton,
-  Tooltip
+  Tooltip,
+  Checkbox
 } from "react-mdl";
 
 class App extends Component {
   render() {
-    const { modaltitle, modaltext, teckList = [] } = this.props;
+    let {  modaltitle, modaltext } = this.props;
 
     return (
       <Modal
@@ -25,7 +26,6 @@ class App extends Component {
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
-        show
         style={{ background: "rgb(0,0,0,0.6)" }}
       >
         <Modal.Header
@@ -36,20 +36,21 @@ class App extends Component {
             {modaltitle}
           </Modal.Title>
         </Modal.Header>
-        <Grid>
-          <Cell col={6}>
-            <h3>Project Information</h3>
-            <p>{modaltext}</p>
-          </Cell>
-          <Cell col={6}>
-            <h3>Technologies</h3>
-            <ol>
-              {teckList.map(t => (
-                <li key={t}>{t}</li>
-              ))}
-            </ol>
-          </Cell>
-        </Grid>
+        <Modal.Body>
+          <Grid>
+            <Cell col={6}>
+              <h3>Project Information</h3>
+              <p>{modaltext}</p>
+            </Cell>
+            <Cell col={6}>
+              <h3>Technologies</h3>
+              <Checkbox label="HTML5" ripple defaultChecked />
+              <Checkbox label="CSS3" ripple defaultChecked />
+              <Checkbox label="JavaScript" ripple defaultChecked />
+              <Checkbox label="jQuery" ripple defaultChecked />
+            </Cell>
+          </Grid>
+        </Modal.Body>
         <Modal.Footer>
           <Button onClick={this.props.onHide}>Close</Button>
         </Modal.Footer>
@@ -81,8 +82,8 @@ class Project extends Component {
       <Card
         shadow={5}
         style={{
-          width: "528px",
-          height: "528px",
+          width: "428px",
+          height: "428px",
           background: `url(${cardBackgroundURL}) center / cover`,
           margin: "auto"
         }}
