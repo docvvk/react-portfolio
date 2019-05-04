@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Modal } from "react-bootstrap";
+import { Modal, OverlayTrigger } from "react-bootstrap";
 
 import {
   Card,
@@ -12,13 +12,12 @@ import {
   CardActions,
   Icon,
   IconButton,
-  Tooltip,
   Checkbox
 } from "react-mdl";
 
 class App extends Component {
   render() {
-    let {  modaltitle, modaltext } = this.props;
+    let { modaltitle, modaltext } = this.props;
 
     return (
       <Modal
@@ -76,16 +75,113 @@ class Project extends Component {
       demoURL
     } = this.props;
 
+    const githubTooltip = ({
+      placement,
+      scheduleUpdate,
+      arrowProps,
+      outOfBoundaries,
+      show: _show,
+      ...props
+    }) => (
+      <div
+        {...props}
+        classID="overlay"
+        style={{
+          // position: "absolute",
+          // opacity: "0.5",
+          zIndex: 99,
+          textAlign: "center",
+          backgroundColor: "rgba(0, 0, 0, 0.85)",
+          padding: "2px 10px",
+          color: "white",
+          borderRadius: 3,
+          top: "0",
+          left: "0",
+          // width: "100%",
+          // height: "100%",
+          ...props.style
+        }}
+      >
+        Review my code!
+      </div>
+    );
+
+    const modalTooltip = ({
+      placement,
+      scheduleUpdate,
+      arrowProps,
+      outOfBoundaries,
+      show: _show,
+      ...props
+    }) => (
+      <div
+        {...props}
+        classID="overlay"
+        style={{
+          // position: "absolute",
+          // opacity: "0.5",
+          zIndex: 99,
+          textAlign: "center",
+          backgroundColor: "rgba(0, 0, 0, 0.85)",
+          padding: "2px 10px",
+          color: "white",
+          borderRadius: 3,
+          top: "0",
+          left: "0",
+          // width: "100%",
+          // height: "100%",
+          ...props.style
+        }}
+      >
+        Click for more info!
+      </div>
+    );
+
+    const demoTooltip = ({
+      placement,
+      scheduleUpdate,
+      arrowProps,
+      outOfBoundaries,
+      show: _show,
+      ...props
+    }) => (
+      <div
+        {...props}
+        classID="overlay"
+        style={{
+          // position: "absolute",
+          // opacity: "0.5",
+          zIndex: 99,
+          textAlign: "center",
+          backgroundColor: "rgba(0, 0, 0, 0.85)",
+          padding: "2px 10px",
+          color: "white",
+          borderRadius: 3,
+          top: "0",
+          left: "0",
+          // width: "100%",
+          // height: "100%",
+          ...props.style
+        }}
+      >
+        Live Demo!
+      </div>
+    );
+
     let modalClose = () => this.setState({ modalShow: false });
 
     return (
       <Card
+        classID="box"
         shadow={5}
         style={{
-          width: "428px",
-          height: "428px",
+          position: "relative",
+          width: "15rem",
+          height: "15rem",
+          display: "inline-block",
           background: `url(${cardBackgroundURL}) center / cover`,
-          margin: "auto"
+          margin: "auto",
+          overflow: "hidden"
         }}
       >
         <CardTitle expand />
@@ -99,30 +195,40 @@ class Project extends Component {
           }}
         >
           <a href={githubURL} target="_blank" rel="noopener noreferrer">
-            <Tooltip label="Review my code!" position="top" large>
+            <OverlayTrigger
+              delay={{ show: 250, hide: 200 }}
+              placement="top"
+              overlay={githubTooltip}
+            >
+              {/* <Tooltip label="Review my code!" position="top" large> */}
               <i
                 style={{
-                  fontSize: "2em",
+                  fontSize: "2rem",
                   color: "white",
-                  position: "relative",
-                  bottom: ".9em",
-                  right: "3em"
+                  position: "absolute",
+                  bottom: "0.5rem",
+                  left: "0.5rem"
                 }}
                 className="fa fa-github"
                 aria-hidden="true"
               />
-            </Tooltip>
+            </OverlayTrigger>
           </a>
 
-          <Tooltip label="Click for more Info!" position="top" large>
+          <OverlayTrigger
+            delay={{ show: 250, hide: 200 }}
+            placement="top"
+            overlay={modalTooltip}
+          >
             <h4
               style={{
                 color: "#fff",
-                fontSize: "24px",
+                fontSize: "1.5rem",
                 textAlign: "center",
                 cursor: "pointer",
-                position: "relative",
-                bottom: "1.2em",
+                position: "absolute",
+                bottom: "0",
+                left: "3.5rem",
                 textTransform: "uppercase",
                 fontFamily: "Anton"
               }}
@@ -130,22 +236,26 @@ class Project extends Component {
             >
               {modaltitle}
             </h4>
-          </Tooltip>
+          </OverlayTrigger>
 
           <a href={demoURL} target="_blank" rel="noopener noreferrer">
-            <Tooltip label="Live Demo!" position="top" large>
+            <OverlayTrigger
+              delay={{ show: 250, hide: 200 }}
+              placement="top"
+              overlay={demoTooltip}
+            >
               <Icon
                 name="info"
                 style={{
-                  fontSize: "2em",
+                  fontSize: "2rem",
                   color: "white",
-                  position: "relative",
-                  bottom: ".7em",
-                  left: "3em"
+                  position: "absolute",
+                  bottom: ".5rem",
+                  right: ".5rem"
                 }}
               />
               {/* <i style={{fontSize:'2em', color:'white', position: "relative", top: "2.2em", right: '5.3em'}} className="fa fa-flash" aria-hidden="true" /> */}
-            </Tooltip>
+            </OverlayTrigger>
           </a>
         </CardActions>
 

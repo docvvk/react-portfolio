@@ -8,7 +8,7 @@ class LandingPage extends Component {
         <Grid className="landing-grid">
           <Cell col={12}>
             <img
-              src="https://previews.dropbox.com/p/thumb/AAXPFIPHwXkvr9-6-3VGKQ9na0cC-95lUHjh1Ns1MhCCNvcWs78zXbeehGIQ-rLTT_1m0Xq4lza8YJXf0AxoKxNCvRD-NSz7upu5eeg1-XLnlDKpAU0l8RQRrtBnj2dZDwPX_DnI3gl1Cb61KfovjNqqqyLKwliDMA5Pw735-w8y-Ivr5KJUG66qQoRoq3eLwxOc7YoebndvT6OhGlJh_Ctd21NHQvPZEmYdKRHbaPzI1XDd3QvJcfZivVvMlngX_BC9-IXtLOtXcKPpV4fQbF2rANPWeWf5A0_3nfEZe4yJVkULJqLrvW4_V4HP8mcLp7Q/p.jpeg?size_mode=5"
+              src="https://images.unsplash.com/photo-1535378620166-273708d44e4c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1466&q=80"
               alt="My Avatar"
               className="avatar-img jello-horizontal"
             />

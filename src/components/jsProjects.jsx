@@ -24,22 +24,23 @@ class JSProjects extends Component {
       // autoplaySpeed: 1000,
       // cssEase: "linear",
       appendDots: dots => (
-        <div
-          style={{
-            backgroundColor: "#ddd",
-            borderRadius: "10px",
-            padding: "10px"
-          }}
-        >
-          <ul style={{ margin: "0px" }}> {dots} </ul>
-        </div>
+        // <div
+        //   style={{
+        //     backgroundColor: "#fff",
+        //     borderRadius: "20px",
+        //     padding: "10px"
+        //   }}
+        // >
+          <ul style={{ margin: "-1rem", borderRadius: "20px",
+               padding: "10px" }}> {dots} </ul>
+        // </div>
       ),
       customPaging: i => (
         <div
           style={{
             width: "30px",
-            color: "blue",
-            border: "1px blue solid"
+            color: "black",
+            border: "1px black solid"
           }}
         >
           {i + 1}
