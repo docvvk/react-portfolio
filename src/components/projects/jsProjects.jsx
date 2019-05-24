@@ -6,21 +6,11 @@ import Project from "../project";
 class JSProjects extends Component {
   render() {
     const settings = {
-      // className: "center",
-      // centerMode: true,
       infinite: true,
       dots: true,
-      // dotsClass: "slick-dots",
-      // arrows: true,
-      // centerPadding: "2rem",
-
       slidesToShow: 3,
       slidesToScroll: 1,
-
-      // autoplay: true,
       speed: 500,
-      // autoplaySpeed: 1000,
-      // cssEase: "linear",
       appendDots: dots => (
         <ul style={{ margin: "-2rem", borderRadius: "20px", padding: "10px" }}>
           {" "}
@@ -38,15 +28,6 @@ class JSProjects extends Component {
           P{i + 1}
         </div>
       )
-      // pauseOnHover: true,
-
-      // customPaging: function() {
-      //   return (
-      //     <a href >
-      //       <img src={'cardBackgroundURL'} alt='project pic' />
-      //     </a>
-      //   );
-      // },
     };
 
     return (
@@ -64,7 +45,7 @@ class JSProjects extends Component {
             }
             githubURL={"https://github.com/docvvk/TriviaGame"}
             demoURL={"https://docvvk.github.io/TriviaGame/"}
-            // teckList={['HTML5','CSS3','JAVASCRIPT','jQuery']}
+            techList={['HTML5','CSS3','JAVASCRIPT','jQuery']}
           />
 
           <Project
@@ -108,7 +89,7 @@ class JSProjects extends Component {
 
           <Project
             modaltitle={"ROCK PAPER SCISSORS"}
-            modalheader={"Technologies"}
+            modalheader={"HTML5 - CSS3 - JavaScript - Bootstrap - Firebase - JQuery"}
             modaltext={
               "Web based multiplayer game with chat functionality. INSTRUCTIONS -- Rock Paper Scissors multiplayer with chat using firebase.This application allows two users with separate sessions to play against one another. The game follows straightforward rock paper scissors rules. Users' stats, choices, and chat messages are tracked and updated in realtime via Firebase."
             }
