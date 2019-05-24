@@ -8,45 +8,41 @@ import {
   Cell,
   CardTitle,
   Button,
-  CardMenu,
+  // CardMenu,
   CardActions,
-  Icon,
-  IconButton,
-  Checkbox
+  Icon
+  // IconButton,
 } from "react-mdl";
 
 class App extends Component {
   render() {
-    let { modaltitle, modaltext } = this.props;
+    let { modaltitle, modaltext, modalheader } = this.props;
 
     return (
       <Modal
         {...this.props}
         size="lg"
+        dialogClassName="modal-90w"
         aria-labelledby="contained-modal-title-vcenter"
         centered
+        scrollable="true"
         style={{ background: "rgb(0,0,0,0.6)" }}
       >
         <Modal.Header
-          style={{ backgroundColor: "#0F2027", color: "white" }}
+          style={{ backgroundColor: "#002e837c", color: "white" }}
           closeButton
         >
           <Modal.Title id="contained-modal-title-vcenter">
-            {modaltitle}
+            <h3>{modaltitle}</h3>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Grid>
-            <Cell col={6}>
-              <h3>Project Information</h3>
+            <Cell col={12}>
+              <h4>PROJECT INFORMATION</h4>
               <p>{modaltext}</p>
-            </Cell>
-            <Cell col={6}>
-              <h3>Technologies</h3>
-              <Checkbox label="HTML5" ripple defaultChecked />
-              <Checkbox label="CSS3" ripple defaultChecked />
-              <Checkbox label="JavaScript" ripple defaultChecked />
-              <Checkbox label="jQuery" ripple defaultChecked />
+              <hr />
+              <h5>{modalheader}</h5>
             </Cell>
           </Grid>
         </Modal.Body>
@@ -87,8 +83,6 @@ class Project extends Component {
         {...props}
         classID="overlay"
         style={{
-          // position: "absolute",
-          // opacity: "0.5",
           zIndex: 99,
           textAlign: "center",
           backgroundColor: "rgba(0, 0, 0, 0.85)",
@@ -97,8 +91,6 @@ class Project extends Component {
           borderRadius: 3,
           top: "0",
           left: "0",
-          // width: "100%",
-          // height: "100%",
           ...props.style
         }}
       >
@@ -118,8 +110,6 @@ class Project extends Component {
         {...props}
         classID="overlay"
         style={{
-          // position: "absolute",
-          // opacity: "0.5",
           zIndex: 99,
           textAlign: "center",
           backgroundColor: "rgba(0, 0, 0, 0.85)",
@@ -128,8 +118,6 @@ class Project extends Component {
           borderRadius: 3,
           top: "0",
           left: "0",
-          // width: "100%",
-          // height: "100%",
           ...props.style
         }}
       >
@@ -149,8 +137,6 @@ class Project extends Component {
         {...props}
         classID="overlay"
         style={{
-          // position: "absolute",
-          // opacity: "0.5",
           zIndex: 99,
           textAlign: "center",
           backgroundColor: "rgba(0, 0, 0, 0.85)",
@@ -159,8 +145,6 @@ class Project extends Component {
           borderRadius: 3,
           top: "0",
           left: "0",
-          // width: "100%",
-          // height: "100%",
           ...props.style
         }}
       >
@@ -176,35 +160,26 @@ class Project extends Component {
         shadow={5}
         style={{
           position: "relative",
-          width: "15rem",
-          height: "15rem",
+          width: "35rem",
+          height: "28rem",
           display: "inline-block",
           background: `url(${cardBackgroundURL}) center / cover`,
-          margin: "auto",
+          margin: "2rem 0 2rem 0",
           overflow: "hidden"
         }}
       >
         <CardTitle expand />
-        <CardActions
-          style={{
-            height: "52px",
-            padding: "16px",
-            background: "rgba(0,0,0,0.2)",
-            fontFamily: "Anton",
-            textAlign: "center"
-          }}
-        >
+        <CardActions>
           <a href={githubURL} target="_blank" rel="noopener noreferrer">
             <OverlayTrigger
               delay={{ show: 250, hide: 200 }}
               placement="top"
               overlay={githubTooltip}
             >
-              {/* <Tooltip label="Review my code!" position="top" large> */}
               <i
                 style={{
                   fontSize: "2rem",
-                  color: "white",
+                  color: "#f8ffb9",
                   position: "absolute",
                   bottom: "0.5rem",
                   left: "0.5rem"
@@ -214,29 +189,6 @@ class Project extends Component {
               />
             </OverlayTrigger>
           </a>
-
-          <OverlayTrigger
-            delay={{ show: 250, hide: 200 }}
-            placement="top"
-            overlay={modalTooltip}
-          >
-            <h4
-              style={{
-                color: "#fff",
-                fontSize: "1.5rem",
-                textAlign: "center",
-                cursor: "pointer",
-                position: "absolute",
-                bottom: "0",
-                left: "3.5rem",
-                textTransform: "uppercase",
-                fontFamily: "Anton"
-              }}
-              onClick={() => this.setState({ modalShow: true })}
-            >
-              {modaltitle}
-            </h4>
-          </OverlayTrigger>
 
           <a href={demoURL} target="_blank" rel="noopener noreferrer">
             <OverlayTrigger
@@ -248,20 +200,42 @@ class Project extends Component {
                 name="info"
                 style={{
                   fontSize: "2rem",
-                  color: "white",
+                  color: "#ff0",
                   position: "absolute",
                   bottom: ".5rem",
-                  right: ".5rem"
+                  left: "2.5rem"
                 }}
               />
               {/* <i style={{fontSize:'2em', color:'white', position: "relative", top: "2.2em", right: '5.3em'}} className="fa fa-flash" aria-hidden="true" /> */}
             </OverlayTrigger>
           </a>
+          <OverlayTrigger
+            delay={{ show: 250, hide: 200 }}
+            placement="top"
+            overlay={modalTooltip}
+          >
+            <h4
+              style={{
+                color: "#fff",
+                fontSize: "1.5rem",
+                cursor: "pointer",
+                position: "absolute",
+                bottom: "0.6rem",
+                left: "5rem",
+                textTransform: "uppercase",
+                fontFamily: "monospace",
+                fontWeight: "bold"
+              }}
+              onClick={() => this.setState({ modalShow: true })}
+            >
+              {modaltitle}
+            </h4>
+          </OverlayTrigger>
         </CardActions>
 
-        <CardMenu style={{ color: "#fff" }}>
+        {/* <CardMenu style={{ color: "#fff" }}>
           <IconButton name="share" />
-        </CardMenu>
+        </CardMenu> */}
 
         <App
           show={this.state.modalShow}
