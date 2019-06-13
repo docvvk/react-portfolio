@@ -5,7 +5,7 @@ class Button extends Component {
     return (
       <div className="form-group">
         <button
-         style={{ font:'1.4rem monospace'}} 
+          style={{ font: "1.4rem monospace" }}
           type={this.props.type}
           name={this.props.name}
           className={this.props.className}

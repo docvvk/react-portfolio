@@ -3,7 +3,7 @@ import { Location } from "@front10/landing-page-book/dist/components";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@front10/landing-page-book/dist/themes/default/index.css";
 
-const apiKey = process.env.REACT_APP_API_KEY
+const apiKey = "AIzaSyBdhEZBl6PFx3L7POHBQRd2leJZkUNfAIc";
 
 class Maps extends Component {
   render() {

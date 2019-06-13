@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-// import { toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
 import Input from "./Input";
@@ -86,25 +84,23 @@ class ContactForm extends Component {
 
     const service_id = "gmail";
     const template_id = "portfolio-1.0";
-    const user_id = `${process.env.REACT_APP_EMAILJS_USERID}`;
+    const user_id = "user_lit2jnTmPLHaVuLTIbOmo";
     emailjs.send(service_id, template_id, template_params, user_id).then(
       function(res) {
         toastr.options = {
-            "closeButton": true,
-            "debug": false,
-            "newestOnTop": false,
-            "progressBar": true,
-            "positionClass": "toast-top-center",
-            "preventDuplicates": true,
-            "showDuration": "300",
-            "hideDuration": "1000",
-            "timeOut": "5000",
-            "extendedTimeOut": "1000",
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "slideDown",
-            "hideMethod": "slideUp",
-            // "onclick": function() { toastr.warning('HEY WHATS UPP..HAVING FUN :)'); }
+          closeButton: true,
+          debug: false,
+          newestOnTop: false,
+          progressBar: true,
+          positionClass: "toast-top-center",
+          preventDuplicates: true,
+          showDuration: "300",
+          timeOut: "2000",
+          showEasing: "swing",
+          hideEasing: "linear",
+          showMethod: "slideDown",
+          hideMethod: "slideUp"
+          // "onclick": function() { toastr.warning('HEY WHATS UPP..HAVING FUN :)'); }
         };
         toastr.clear();
         setTimeout(() => toastr.success(`MESSAGE SENT SUCCESSFULLY !!`), 300);
