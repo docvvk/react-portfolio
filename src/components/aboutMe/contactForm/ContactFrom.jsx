@@ -103,7 +103,7 @@ class ContactForm extends Component {
           // "onclick": function() { toastr.warning('HEY WHATS UPP..HAVING FUN :)'); }
         };
         toastr.clear();
-        setTimeout(() => toastr.success(`MESSAGE SENT SUCCESSFULLY !!`), 300);
+        setTimeout(() => toastr.success(`MESSAGE SENT SUCCESSFULLY !!`), 200);
         console.log("SUCCESS!", res.status, res.text);
       },
       function(err) {

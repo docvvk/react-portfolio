@@ -42,7 +42,7 @@ class LandingPage extends Component {
             {/* <Cell col={1} /> */}
             <Cell col={12} className="social-links fade-in">
               <svg width="54px" height="54px" viewBox="0 0 128 128">
-                <title>HTML5 - Hyper Text Markup Language</title>
+                <title>HTML5 - Hyper Text Markup Language is the standard markup language for documents designed to be displayed in a web browser.</title>
                 <path
                   className="path"
                   stroke="#000000"
@@ -78,6 +78,8 @@ class LandingPage extends Component {
               </svg>
 
               <svg width="54px" height="54px" viewBox="0 0 128 128">
+                <title>CSS - Cascading Style Sheets - Style sheet language used for describing the presentation of a document written in a markup language like HTML.</title>
+
                 <path
                   className="path"
                   stroke="#000000"
@@ -129,6 +131,10 @@ class LandingPage extends Component {
               </svg>
 
               <svg width="54px" height="54px" viewBox="0 0 128 128">
+                <title>
+                  BOOTSTRAP - The most popular HTML, CSS, and JS library in the
+                  world.
+                </title>
                 <path
                   className="path"
                   stroke="#000000"
@@ -140,6 +146,10 @@ class LandingPage extends Component {
               </svg>
 
               <svg width="54px" height="54px" viewBox="0 0 128 128">
+                <title>
+                  JavaScript - High-level, interpreted programming language that
+                  conforms to the ECMAScript specification.
+                </title>
                 <path
                   className="path"
                   stroke="#000000"
@@ -159,6 +169,10 @@ class LandingPage extends Component {
               </svg>
 
               <svg width="54px" height="54px" viewBox="0 0 128 128">
+                <title>
+                  REACT - Javascript library built by Facebook. Tool for
+                  building UI Interface and UI Components.
+                </title>
                 <path
                   className="path"
                   stroke="#000000"
@@ -170,6 +184,11 @@ class LandingPage extends Component {
               </svg>
 
               <svg width="54px" height="54px" viewBox="0 0 128 128">
+                <title>
+                  NODEJS - Open-source, cross-platform JavaScript run-time
+                  environment that executes JavaScript code outside of a
+                  browser.
+                </title>
                 <path
                   className="path"
                   stroke="#000000"
@@ -181,6 +200,11 @@ class LandingPage extends Component {
               </svg>
 
               <svg width="54px" height="54px" viewBox="0 0 128 128">
+                <title>
+                  BABEL - Toolchain that is mainly used to convert ECMAScript
+                  2015+ code into a backwards compatible version of JavaScript
+                  in old browsers or environments.
+                </title>
                 <path
                   className="path"
                   stroke="#000000"
@@ -192,6 +216,11 @@ class LandingPage extends Component {
               </svg>
 
               <svg width="54px" height="54px" viewBox="0 0 128 128">
+                <title>
+                  EXPRESS - Minimal and flexible Node.js web application
+                  framework o help organize your web application into an MVC
+                  architecture on the server side.
+                </title>
                 <path
                   className="path"
                   stroke="#000000"
@@ -247,6 +276,11 @@ class LandingPage extends Component {
               </svg>
 
               <svg width="54px" height="54px" viewBox="0 0 128 128">
+                <title>
+                  MONGODB - Open-source document-based database management tool
+                  that stores data in JSON-like formats. It is a highly
+                  scalable, flexible and distributed NoSQL database.
+                </title>
                 <path
                   className="path"
                   stroke="#000000"
@@ -470,6 +504,10 @@ class LandingPage extends Component {
               </svg>
 
               <svg width="54px" height="54px" viewBox="0 0 128 128">
+                <title>
+                  HEROKU - Platform as a service (PaaS) that enables developers
+                  to build, run, and operate applications entirely in the cloud.
+                </title>
                 <path
                   className="path"
                   stroke="#000000"
@@ -481,6 +519,12 @@ class LandingPage extends Component {
               </svg>
 
               <svg width="54px" height="54px" viewBox="0 0 128 128">
+                <title>
+                  DOCKER - Set of coupled software-as-a-service and
+                  platform-as-a-service products that use operating-system-level
+                  virtualization to develop and deliver software in packages
+                  called containers.
+                </title>
                 <path
                   className="path"
                   stroke="#000000"
@@ -598,6 +642,11 @@ class LandingPage extends Component {
               </svg>
 
               <svg width="54px" height="54px" viewBox="0 0 128 128">
+                <title>
+                  GIT - Distributed version-control system for tracking changes
+                  in source code during software development. It is designed for
+                  coordinating work among programmers.
+                </title>
                 <path
                   className="path"
                   stroke="#000000"
@@ -609,12 +658,19 @@ class LandingPage extends Component {
               </svg>
 
               <svg width="54px" height="54px" viewBox="0 0 128 128">
+                <title>
+                  VISUAL STUDIO CODE - Source-code editor developed by Microsoft
+                  for Windows, Linux and macOS. It includes support for
+                  debugging, embedded Git control and GitHub, syntax
+                  highlighting, intelligent code completion, snippets, and code
+                  refactoring.
+                </title>
                 <path
                   className="path"
                   stroke="#000000"
                   stroke-width="4"
                   stroke-miterlimit="10"
-                  fill="white"
+                  fill="#016EC5"
                   d="M95 2.3l30.5 12.3v98.7L94.8 125.7 45.8 77l-31 24.1L2.5 94.9V33.1l12.3-5.9 31 24.3ZM14.8 45.7V83.2l18.5-19Zm48.1 18.5L94.8 89.3V39Z"
                 />
               </svg>
@@ -632,6 +688,12 @@ class LandingPage extends Component {
                 stroke-width="2"
                 stroke-miterlimit="10"
               >
+                <title>
+                  GOOGLE CLOUD PLATFORM - Suite of cloud computing services that
+                  runs on the same infrastructure that Google uses internally
+                  for its end-user products, such as Google Search and YouTube.
+                </title>
+
                 <g id="surface1">
                   <path
                     fill="#CFD8DC"
@@ -664,6 +726,7 @@ class LandingPage extends Component {
                 </g>
               </svg>
               <img
+                title="KUBERNETES - Open-source container-orchestration system for automating application deployment, scaling, and management."
                 width="60px"
                 height="60px"
                 src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg"
