@@ -19,9 +19,10 @@ class AccordionSection extends Component {
     return (
       <div
         style={{
-          background: isOpen ? "#daad86" : "#fbeec1",
+          background: isOpen ? "#daad8693" : "#fbeec1",
           border: ".1px solid #daad86",
-          padding: "5px 10px"
+          padding: "5px 10px",
+          borderRadius: "10px"
         }}
       >
         <div onClick={onClick} style={{ cursor: "pointer" }}>
@@ -37,7 +38,8 @@ class AccordionSection extends Component {
               background: "#fbeec1",
               border: "1px solid #daad86",
               marginTop: 10,
-              padding: "10px 20px"
+              padding: "10px 20px",
+              borderRadius: "10px"
             }}
           >
             {this.props.children}

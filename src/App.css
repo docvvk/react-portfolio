@@ -19,16 +19,19 @@ body {
   user-select: none;
   cursor: default;
 }
-
+/* 
 #root {
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  overflow: auto;
+} */
+
+.container {
+  position: relative;
+  bottom: 5rem;
 }
 
 .card {
-  width: 45ch;
-  height: 47ch;
+  width: 27rem;
+  height: 27rem;
   /* background: grey; */
   border-radius: 5px;
   background-image: url(https://i.ibb.co/n8sVYmw/p1.jpg);
@@ -37,7 +40,7 @@ body {
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.5s;
   will-change: transform;
-  border: 15px solid white;
+  border: 15px solid #f5eccb00;
   margin-top: 2rem;
 }
 
@@ -51,9 +54,9 @@ body {
   font-family: 'Courier New', Courier, monospace;
   border-radius: 5px;
   background-color: #fa8b8b2d;
-  /* background-image: url(https://i.ibb.co/n8sVYmw/p1.jpg); */
-  /* background-size: cover;
-  background-position: center center; */
+  background-image: url(https://cdn.pixabay.com/photo/2014/12/29/17/39/code-583073_1280.jpg);
+ background-size: cover;
+  background-position: center center;
   box-shadow: 0px 10px 30px -5px rgba(250, 196, 95, 0.3);
   transition: box-shadow 0.5s;
   will-change: transform;
@@ -65,12 +68,15 @@ body {
 .text:hover {
   box-shadow: 0px 30px 100px -10px rgba(255, 187, 0, 0.4);
 }
+.accordionText {
+  font-family: "Courgette"
+}
 svg {
   transition: width .2s linear;
 }
 svg:hover {
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
 
 }
 .path {
@@ -127,7 +133,7 @@ svg:hover {
 .social-links {
   /* display: block; */
   /* justify-content: space-evenly; */
-  width: 84%;
+  /* width: 70%; */
   margin: auto;
   background-color: rgba(0, 0, 0, 0.63);
   opacity: 0.6;

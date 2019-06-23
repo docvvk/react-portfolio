@@ -11,7 +11,7 @@ import AccordionFinal from "./Accordion/index";
 // import Experience from "./experience";
 // import Skills from "./skills";
 // import Text from './Text';
-import CardImage from "./CardImage";
+import CardImage from "./contactPage/cardImage";
 
 class Resume extends Component {
   render() {
